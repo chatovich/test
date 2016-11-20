@@ -22,4 +22,13 @@
         <url-pattern>/controller</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>parsing</servlet-name>
+        <servlet-class>com.movierate.movie.controller.Parsing</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>parsing</servlet-name>
+        <url-pattern>/parsing</url-pattern>
+    </servlet-mapping>
+
 </web-app>

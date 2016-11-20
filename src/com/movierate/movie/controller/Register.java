@@ -77,7 +77,7 @@ public class Register extends HttpServlet {
             String filePath = path + File.separator + fileName;
             request.setAttribute("fileUploaded",true);
             request.setAttribute("fileNameSS",filePath);
-            request.getRequestDispatcher("/register.jsp").forward(request,response);
+            request.getRequestDispatcher("register.jsp").forward(request,response);
 
 //            writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
 //            writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");

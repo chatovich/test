@@ -1,6 +1,13 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Yultos_
+  Date: 19.11.2016
+  Time: 19:24
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html;charset=utf-8"  pageEncoding="UTF-8" %>
-<%@ include file="/jsp/top_menu.jsp" %>
 
+<%@ include file="top_menu.jsp" %>
 <%--<html>--%>
 <%--<head>--%>
     <%--<meta http-equiv="content-type" content="text/html; charset=utf-8" />--%>
@@ -8,15 +15,15 @@
     <%--<title>Movie rating</title>--%>
     <%--<link href="css/bootstrap.min.css" rel="stylesheet" />--%>
     <%--<link href="css/carousel.css" rel="stylesheet" />--%>
+    <%--<link href="css/register.css" rel="stylesheet" />--%>
     <%--<link href="css/search-form.css" rel="stylesheet" />--%>
     <%--<link href="css/top_menu_font.css" rel="stylesheet" />--%>
     <%--<script src="js/bootstrap.min.js"></script>--%>
     <%--<script src="js/carousel.js"></script>--%>
+    <%--<script src="js/register.js"></script>--%>
     <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--%>
 <%--</head>--%>
-
 <%--<body>--%>
-
 <%--<div class="navbar-wrapper">--%>
     <%--<div class="container-fluid">--%>
         <%--<nav class="navbar navbar-fixed-top">--%>
@@ -33,7 +40,7 @@
                 <%--<div id="navbar" class="navbar-collapse collapse">--%>
                     <%--<ul class="nav navbar-nav">--%>
                         <%--<li class="active"><a href="#" class="">Home</a></li>--%>
-                        <%--<li><a href="#">About MovieRate</a></li>--%>
+                        <%--<li><a href="reg.jsp">About MovieRate</a></li>--%>
                         <%--<li><a href="#">New movies</a></li>--%>
                         <%--<li><a href="#">Going to the cinema</a></li>--%>
                     <%--</ul>--%>
@@ -54,78 +61,53 @@
 <%--</div>--%>
 
 
-<!--<base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">-->
-<div id="carousel">
-    <figure id="spinner">
-        <img src="img/god_father.jpeg" alt>
-        <img src="img/avatar.jpg" alt>
-        <img src="img/fantast.jpg" alt>
-        <img src="img/bastard.jpg" alt>
-        <img src="img/titanic.jpg" alt>
-        <img src="img/potter.jpg" alt>
-        <img src="img/kavkaz.jpg" alt>
-        <img src="img/lord_ring.jpg" alt>
-    </figure>
+
+<div class="wrap container">
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form action="register" role="form" enctype="multipart/form-data" method="post" name="register">
+                <fieldset>
+                    <h2 align="center">RegistrationInsideJSP</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text" name="login" id="login" class="form-control input-lg" placeholder="Login">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="photo" class="form-control input-lg" >
+                    </div>
+
+
+                    </span>
+                    <hr class="colorgraph">
+                    <div class="row">
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Register" type="Submit">Reg</button>
+                            <%--<a href="" class="btn btn-lg btn-primary btn-block">Register</a>--%>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <c:if test="${fileUploaded}">
+        <img src="${fileNameSS}">
+    </c:if>
+
+
+
+
+
 </div>
-<span style="float:right" class="ss-icon" onclick="galleryspin('-')">&gt;</span>
-<span style="float:left" class="ss-icon" onclick="galleryspin('')">&lt;</span>
-
-<div style=" width:100%; height:10px; clear:both;">.</div>
-
-<!--<form role="form" class="form-inline">-->
-
-<form class="form-horizontal">
-    <fieldset>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic"></label>
-            <div class="col-md-4">
-                <select id="selectbasic1" name="selectbasic" class="form-control">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic"></label>
-            <div class="col-md-4">
-                <select id="selectbasic2" name="selectbasic" class="form-control">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic"></label>
-            <div class="col-md-4">
-                <select id="selectbasic" name="selectbasic" class="form-control">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton"></label>
-            <div class="col-md-4">
-                <div class="mx-auto" style="width: 200px;">
-                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
-                </div>
-            </div>
-        </div>
-
-    </fieldset>
-</form>
-
-
-<%@ include file="/jsp/bottom.jsp" %>
+<%@ include file="bottom.jsp" %>
 
 <%--</body>--%>
 <%--</html>--%>
-

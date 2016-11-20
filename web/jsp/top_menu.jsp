@@ -29,7 +29,6 @@
 
 <body>
 
-
 <%--<fmt:setLocale value="${sessionScope.local}" />--%>
 
 <%--<fmt:setBundle basename="resource.locale" var="loc" />--%>
