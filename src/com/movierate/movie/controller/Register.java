@@ -1,15 +1,12 @@
-package com.movierate.movie.servlet;
+package com.movierate.movie.controller;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
-import java.nio.file.Path;
 
 /**
  * Created by Yultos_ on 19.11.2016
@@ -49,6 +46,8 @@ public class Register extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         // Create path components to save the file
         final String path = "file";
@@ -73,8 +72,15 @@ public class Register extends HttpServlet {
             while ((read = filecontent.read(bytes)) != -1) {
                 out.write(bytes, 0, read);
             }
-            writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
-            writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");
+
+
+            String filePath = path + File.separator + fileName;
+            request.setAttribute("fileUploaded",true);
+            request.setAttribute("fileNameSS",filePath);
+            request.getRequestDispatcher("/register.jsp").forward(request,response);
+
+//            writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
+//            writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");
             // LOGGER.log(Level.INFO, "File{0}being uploaded to {1}", new
             // Object[] { fileName, path });
         } catch (FileNotFoundException fne) {

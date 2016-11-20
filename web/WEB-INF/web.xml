@@ -6,10 +6,20 @@
 
     <servlet>
         <servlet-name>register</servlet-name>
-        <servlet-class>com.movierate.movie.servlet.Register</servlet-class>
+        <servlet-class>com.movierate.movie.controller.Register</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>com.movierate.movie.controller.Controller</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
 </web-app>
