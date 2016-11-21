@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div>
 <form class="form-horizontal" action="parsing" role="form" enctype="multipart/form-data" method="post" name="parsing">
     <fieldset>
 
@@ -39,11 +39,12 @@
 
     </fieldset>
 </form>
+    </div>
 
 <c:if test="${listsUploaded}">
-    from servlet
+
     <table border="1" align="center">
-        <caption>Caramels</caption>
+        <caption>Caramels using ${parsingType}</caption>
         <tr>
             <th>name</th>
             <th>ccal</th>
@@ -73,6 +74,38 @@
     </tr>
     </c:forEach>
 </table>
+
+    <table border="1" align="center">
+        <caption>Chocolates using ${parsingType}</caption>
+        <tr>
+            <th>name</th>
+            <th>ccal</th>
+            <th>production</th>
+            <th>filling</th>
+            <th>ingridients</th>
+            <th>nutritional</th>
+        </tr>
+        <c:forEach var="candy" items="${chocolates}" >
+            <tr>
+                <td>${candy.name}</td>
+                <td>${candy.ccal}</td>
+                <td>${candy.production}</td>
+                <td>${candy.fillng}</td>
+                <td>
+                    <c:forEach var="ingr" items="${candy.ingridients}" >
+                        ${ingr},
+
+                    </c:forEach>
+                </td>
+                <td>
+                    <c:forEach var="ingr" items="${candy.nutritionals}" >
+                        ${ingr},
+
+                    </c:forEach>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
 </c:if>
 
 </body>

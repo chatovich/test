@@ -3,11 +3,9 @@ package com.movierate.movie.controller;
 import com.movierate.parsing.entity.Candy;
 import com.movierate.parsing.entity.Caramel;
 import com.movierate.parsing.runner.ParserRunner;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,9 +16,19 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by Yultos_ on 20.11.2016
+ * Created by Yultos_ on 21.11.2016
  */
-public class Parsing extends HttpServlet {
+@MultipartConfig
+public class Parcing extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Parcing() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
     //final static Logger LOGGER = LogManager.getLogger(Parsing.class);
 
@@ -35,8 +43,10 @@ public class Parsing extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String parsingType = request.getParameter("selectbasic");
+//        final PrintWriter writer = response.getWriter();
+//        writer.print(parsingType);
 
- //        Create path components to save the file
+        //        Create path components to save the file
         final String path = "file"+ File.separator + "parse";
         final Part filePart = request.getPart("file");
         final String fileName = getFileName(filePart);
@@ -71,6 +81,7 @@ public class Parsing extends HttpServlet {
             }
             request.setAttribute("caramels", caremels);
             request.setAttribute("chocolates", chocolates);
+            request.setAttribute("parsingType", parsingType);
             request.setAttribute("listsUploaded", true);
             request.getRequestDispatcher("parse.jsp").forward(request,response);
 
@@ -134,3 +145,4 @@ public class Parsing extends HttpServlet {
     }
 
 }
+
