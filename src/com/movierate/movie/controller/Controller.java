@@ -34,8 +34,8 @@ public class Controller extends HttpServlet{
         CommandType commandType = CommandType.valueOf(commandName.toUpperCase());
         ICommand command  = commandType.getCommand();
         String pageName = command.execute(request);
-//        request.getRequestDispatcher(pageName).forward(request, response);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher(pageName).forward(request, response);
+        //request.getRequestDispatcher("/index.jsp").forward(request, response);
 
     }
 

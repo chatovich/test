@@ -83,7 +83,7 @@ public class Parcing extends HttpServlet {
             request.setAttribute("chocolates", chocolates);
             request.setAttribute("parsingType", parsingType);
             request.setAttribute("listsUploaded", true);
-            request.getRequestDispatcher("parse.jsp").forward(request,response);
+            request.getRequestDispatcher("/jsp/testParcing.jsp").forward(request,response);
 
             //writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
             //writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");

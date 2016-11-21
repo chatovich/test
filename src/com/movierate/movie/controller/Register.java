@@ -1,5 +1,9 @@
 package com.movierate.movie.controller;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +19,8 @@ import java.io.*;
 //@WebServlet(name = "Register", urlPatterns = { "/register" })
 @MultipartConfig
 public class Register extends HttpServlet {
+
+    final static Logger LOGGER = LogManager.getLogger(Register.class);
     private static final long serialVersionUID = 1L;
 
     /**
@@ -77,12 +83,11 @@ public class Register extends HttpServlet {
             String filePath = path + File.separator + fileName;
             request.setAttribute("fileUploaded",true);
             request.setAttribute("fileNameSS",filePath);
-            request.getRequestDispatcher("register.jsp").forward(request,response);
+            request.getRequestDispatcher("/jsp/reg.jsp").forward(request,response);
 
 //            writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
 //            writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");
-            // LOGGER.log(Level.INFO, "File{0}being uploaded to {1}", new
-            // Object[] { fileName, path });
+             LOGGER.log(Level.INFO, "File{0}being uploaded to {1}");
         } catch (FileNotFoundException fne) {
             writer.println(
                     "You either did not specify a file to upload or are " + "trying to upload a file to a protected or nonexistent " + "location.");

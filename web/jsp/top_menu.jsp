@@ -63,7 +63,7 @@
 
 
                     <ul class="nav navbar-nav pull-right">
-                        <li class=" dropdown"><a href="register.jsp" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
+                        <li class=" dropdown"><a href="jsp/reg.jsp" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Change Password</a></li>
                                 <li><a href="#">My Profile</a></li>
@@ -75,13 +75,13 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <form action="controller" method="post">
-                                <input type="hidden" name="language" value="en" />
+                                <input type="hidden" name="language" value="en_EN" />
                                 <input type="hidden" name="command" value="change_language" />
                                 <button type="submit" class="btn-link"><fmt:message key="nav.language.en"/></button>
                             </form>
                         </li>
                         <li><form action="controller" method="post">
-                            <input type="hidden" name="language" value="ru" />
+                            <input type="hidden" name="language" value="ru_RU" />
                             <input type="hidden" name="command" value="change_language" />
                             <button type="submit" class="btn-link"><fmt:message key="nav.language.ru"/> </button>
                         </form>
@@ -95,3 +95,4 @@
         </nav>
     </div>
 </div>
+

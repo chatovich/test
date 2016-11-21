@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"  pageEncoding="UTF-8" %>
-<%@ include file="/jsp/top_menu.jsp" %>
+<%--<%@ include file="/jsp/top_menu.jsp" %>--%>
+<jsp:include page="/jsp/top_menu.jsp"/>
 
 <%--<html>--%>
 <%--<head>--%>
@@ -54,7 +55,7 @@
 <%--</div>--%>
 
 
-<!--<base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">-->
+
 <div id="carousel">
     <figure id="spinner">
         <img src="img/god_father.jpeg" alt>
@@ -74,6 +75,8 @@
 
 <!--<form role="form" class="form-inline">-->
 
+<h3>${sessionScope.language}</h3>
+<h3>after language</h3>
 <form class="form-horizontal">
     <fieldset>
 
