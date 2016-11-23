@@ -67,23 +67,12 @@ public class Register extends HttpServlet {
         final PrintWriter writer = response.getWriter();
 
         try {
-            File file = new File(request.getServletContext().getRealPath("/") + File.separator + path + File.separator + fileName);
-            //File file = new File(System.getProperty("user.dir") + File.separator + path + File.separator + fileName);
-            out = new FileOutputStream(file);
-            filecontent = filePart.getInputStream();
-
-            int read = 0;
-            final byte[] bytes = new byte[1024];
-
-            while ((read = filecontent.read(bytes)) != -1) {
-                out.write(bytes, 0, read);
-            }
-
+            filePart.write(request.getServletContext().getRealPath("/") + File.separator + path + File.separator + fileName);
 
             String filePath = path + File.separator + fileName;
             request.setAttribute("fileUploaded",true);
             request.setAttribute("fileNameSS",filePath);
-            request.getRequestDispatcher("/jsp/reg.jsp").forward(request,response);
+            request.getRequestDispatcher("jsp/reg.jsp").forward(request,response);
 
 //            writer.println("New file " + fileName + " created at " + path + " (" + file.getAbsolutePath() + " )");
 //            writer.print("<br><img src=\"" + path + File.separator + fileName + "\" alt=\"uploaded foto\">");

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"  pageEncoding="UTF-8" %>
 <%--<%@ include file="/jsp/top_menu.jsp" %>--%>
-<jsp:include page="/jsp/top_menu.jsp"/>
+<jsp:include page = "${pageContext.request.contextPath}/jsp/top_menu.jsp"/>
 
 <%--<html>--%>
 <%--<head>--%>
@@ -58,14 +58,14 @@
 
 <div id="carousel">
     <figure id="spinner">
-        <img src="img/god_father.jpeg" alt>
-        <img src="img/avatar.jpg" alt>
-        <img src="img/fantast.jpg" alt>
-        <img src="img/bastard.jpg" alt>
-        <img src="img/titanic.jpg" alt>
-        <img src="img/potter.jpg" alt>
-        <img src="img/kavkaz.jpg" alt>
-        <img src="img/lord_ring.jpg" alt>
+        <img src="../img/god_father.jpeg" alt>
+        <img src="../img/avatar.jpg" alt>
+        <img src="../img/fantast.jpg" alt>
+        <img src="../img/bastard.jpg" alt>
+        <img src="../img/titanic.jpg" alt>
+        <img src="../img/potter.jpg" alt>
+        <img src="../img/kavkaz.jpg" alt>
+        <img src="../img/lord_ring.jpg" alt>
     </figure>
 </div>
 <span style="float:right" class="ss-icon" onclick="galleryspin('-')">&gt;</span>
@@ -127,7 +127,7 @@
 </form>
 
 
-<%@ include file="/jsp/bottom.jsp" %>
+<jsp:include page="${pageContext.request.contextPath}/jsp/bottom.jsp"/>
 
 <%--</body>--%>
 <%--</html>--%>

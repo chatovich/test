@@ -16,6 +16,6 @@ public class ChangeLanguageCommand implements ICommand {
         HttpSession session = request.getSession(true);
         String local = request.getParameter("language");
         session.setAttribute("language", local);
-        return "/index.jsp";
+        return "jsp/index.jsp";
     }
 }

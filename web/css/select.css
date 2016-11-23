@@ -1,0 +1,29 @@
+.radius {
+    height:150px;
+    width: 80%;
+    max-width: 900px;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+    background: #75b5ae radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    box-shadow:
+            inset rgba(0,0,0,.6) 0 -3px 8px,
+            inset rgba(252,255,255,.7) 0 3px 8px,
+            rgba(0,0,0,.8) 0 3px 8px -3px;
+}
+
+.radius_in {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.select {
+    flex: 0 0 100px;
+    margin: 0 10px;
+    margin-bottom: 20px;
+    float: left;
+}

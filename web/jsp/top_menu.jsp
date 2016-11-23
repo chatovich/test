@@ -14,14 +14,14 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Cache-Control" content="no-cache">
     <title>Movie rating</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/carousel.css" rel="stylesheet" />
-    <link href="css/register.css" rel="stylesheet" />
-    <link href="css/search-form.css" rel="stylesheet" />
-    <link href="css/top_menu_font.css" rel="stylesheet" />
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/register.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/carousel.css" rel="stylesheet" />
+    <link href="/css/register.css" rel="stylesheet" />
+    <link href="/css/search-form.css" rel="stylesheet" />
+    <link href="/css/top_menu_font.css" rel="stylesheet" />
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/register.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 </head>
@@ -63,7 +63,7 @@
 
 
                     <ul class="nav navbar-nav pull-right">
-                        <li class=" dropdown"><a href="jsp/reg.jsp" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
+                        <li class=" dropdown"><a href="${pageContext.request.contextPath}/jsp/reg.jsp" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Change Password</a></li>
                                 <li><a href="#">My Profile</a></li>
@@ -74,13 +74,13 @@
 
                     <ul class="nav navbar-nav navbar-left">
                         <li>
-                            <form action="controller" method="post">
+                            <form action="/controller" method="post">
                                 <input type="hidden" name="language" value="en_EN" />
                                 <input type="hidden" name="command" value="change_language" />
                                 <button type="submit" class="btn-link"><fmt:message key="nav.language.en"/></button>
                             </form>
                         </li>
-                        <li><form action="controller" method="post">
+                        <li><form action="/controller" method="post">
                             <input type="hidden" name="language" value="ru_RU" />
                             <input type="hidden" name="command" value="change_language" />
                             <button type="submit" class="btn-link"><fmt:message key="nav.language.ru"/> </button>
