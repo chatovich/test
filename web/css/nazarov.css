@@ -56,3 +56,9 @@
     background-color: #f90;
 }
 
+.image {
+    height: 600px;
+    background-image: url("../img/avatarwide.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}

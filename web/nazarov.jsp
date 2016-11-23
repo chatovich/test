@@ -7,11 +7,11 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <title>Movie rating</title>
     <link href="css/fonts.css" rel="stylesheet" />
-    <script src="js/jquery-3.1.1.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <%--<script src="js/jquery-3.1.1.js"></script>--%>
+    <%--<link href="css/bootstrap.min.css" rel="stylesheet" />--%>
     <link href="css/nazarov.css" rel="stylesheet" />
     <link href="css/searchblock.css" rel="stylesheet" />
-    <script src="js/bootstrap.js"></script>
+    <%--<script src="js/bootstrap.js"></script>--%>
 
 
 </head>
@@ -48,24 +48,29 @@
     </ul>
 </nav>
 
-<div>
-    <img src="img/titanicwide.jpg" alt="First slide">
-    <!-- Static Header -->
-    <div>
-        <div>
-            <h2>
-                <span>Welcome to <strong style="font-family:Sofia;">MOVIERATE</strong></span>
-            </h2>
-            <br>
-            <h3>
-                <span>Place where you can learn about movies and share opinions</span>
-            </h3>
+<div class="image">
 
-        </div>
-    </div><!-- /header-text -->
+<h1 align="center" style="line-height:600px;font-size: 64px;color:white">Welcome to <strong style="font-family:Sofia;">MOVIERATE</strong></h1>
+
+
 </div>
 
+<%--<div style="position: relative; width: 200px; height: 80%">--%>
+    <%--<div style="position: absolute; top: 0; left: 0; width: 200px">--%>
+        <%--<img src="img/titanicwide.jpg" alt="First slide">--%>
+    <%--</div>--%>
+    <%--<div style="position: absolute; width: 600px">--%>
+        <%--<h2>--%>
+            <%--<span>Welcome to <strong style="font-family:Sofia;">MOVIERATE</strong></span>--%>
+        <%--</h2>--%>
+        <%--<br>--%>
+        <%--<h3>--%>
+            <%--<span>Place where you can learn about movies and share opinions</span>--%>
+        <%--</h3>--%>
+    <%--</div>--%>
+<%--</div>--%>
 
+<div style="width:100%; height:15px; clear:both;">.</div>
 
 <div class="radius">
     <h2>Movie Search</h2>
